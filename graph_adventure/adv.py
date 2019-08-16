@@ -99,6 +99,15 @@ else:
     print("TESTS FAILED: INCOMPLETE TRAVERSAL")
     print(f"{len(roomGraph) - len(visited_rooms)} unvisited rooms")
 
+f = open('moves.txt', 'a')
+f.write(f"{len(traversalPath)} \n")
+f.close()
+
+f = open('moves.txt', 'r')
+result_list = f.read().split(' \n')
+f.close()
+result_list = list(map(int,result_list[:-1]))
+print(f"Best result: {min(result_list)}")
 
 
 #######
