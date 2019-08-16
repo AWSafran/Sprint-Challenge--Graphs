@@ -65,8 +65,9 @@ def explore_room(previous_room, graph, player, path, direction = None):
                 path.append(key)
                 player.travel(key)
                 explore_room(current_room, graph, player, path, key)
-                player.travel(rev_dirs[key])
-                path.append(rev_dirs[key])
+                if len(graph) != 500:
+                    player.travel(rev_dirs[key])
+                    path.append(rev_dirs[key])
 
 
 # FILL THIS IN
